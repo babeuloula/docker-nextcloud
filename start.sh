@@ -2,9 +2,9 @@
 
 set -e
 
-readonly DOCKER_PATH=$(dirname $(realpath $0))
+readonly CURRENT_PATH=$(dirname $(realpath $0))
 
-cd ${DOCKER_PATH};
+cd ${CURRENT_PATH};
 
 . ./lib/functions.sh
 
