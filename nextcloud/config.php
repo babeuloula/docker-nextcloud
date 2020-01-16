@@ -17,10 +17,10 @@ $CONFIG = [
     'dbname' => getenv('MYSQL_DATABASE'),
     'dbuser' => getenv('MYSQL_USER'),
     'dbpassword' => getenv('MYSQL_PASSWORD'),
-    'dbtableprefix' => 'uc_',
+    'dbtableprefix' => '',
     'mysql.utf8mb4' => true,
 
-    'installed' => true,
+    'installed' => false,
     'overwrite.cli.url' => 'https://'.getenv('NEXTCLOUD_HOSTNAME').'/nextcloud',
     'memcache.local' => '\OC\Memcache\APCu',
     'apps_paths' =>[
