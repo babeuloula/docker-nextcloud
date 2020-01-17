@@ -17,6 +17,7 @@ docker-compose build --parallel
 if [[ -z "$(docker network ls -f name="${NETWORK}" --format "{{.Name}}")" ]]; then
     docker network create "${NETWORK}"
 fi
+docker-compose run --name nextcloud nextcloud sh -c "chown -R www-data:root /var/www/html/config; chmod -R 0644 /var/www/html/config"
 docker-compose up -d
 
 block_success "Environment is started!"

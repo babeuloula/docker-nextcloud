@@ -1,76 +1,76 @@
 <?php
-
-$CONFIG = [
-    'config_is_read_only' => true,
-
-    'instanceid' => getenv('NEXTCLOUD_INSTANCE_ID'),
-    'passwordsalt' => getenv('NEXTCLOUD_PASSWORD_SALT'),
-    'secret' => getenv('NEXTCLOUD_SECRET'),
-    'trusted_domains' => [
-        [getenv('NEXTCLOUD_HOSTNAME')]
-    ],
-    'datadirectory' => '/var/www/nextcloud/data',
-    'version' => getenv('NEXTCLOUD_VERSION'),
-
-    'dbtype' => 'mysql',
-    'dbhost' => 'mysql',
-    'dbname' => getenv('MYSQL_DATABASE'),
-    'dbuser' => getenv('MYSQL_USER'),
-    'dbpassword' => getenv('MYSQL_PASSWORD'),
-    'dbtableprefix' => '',
-    'mysql.utf8mb4' => true,
-
-    'installed' => false,
-    'overwrite.cli.url' => 'https://'.getenv('NEXTCLOUD_HOSTNAME').'/nextcloud',
-    'memcache.local' => '\OC\Memcache\APCu',
-    'apps_paths' =>[
-        [
-            'path' => OC::$SERVERROOT.'/apps',
-            'url' => '/apps',
-            'writable' => false,
-        ],
-        [
-            'path' => OC::$SERVERROOT.'/custom_apps',
-            'url' => '/custom_apps',
-            'writable' => true,
-        ],
-    ],
-
-    'mail_smtpmode' => 'smtp',
-    'mail_smtphost' => getenv('SMTP_HOST'),
-    'mail_smtpport' => getenv('SMTP_PORT') ?: (getenv('SMTP_SECURE') ? 465 : 25),
-    'mail_smtpsecure' => getenv('SMTP_SECURE') ?: '',
-    'mail_smtpauth' => getenv('SMTP_NAME') && getenv('SMTP_PASSWORD'),
-    'mail_smtpauthtype' => getenv('SMTP_AUTHTYPE') ?: 'LOGIN',
-    'mail_smtpname' => getenv('SMTP_NAME') ?: '',
-    'mail_smtppassword' => getenv('SMTP_PASSWORD') ?: '',
-    'mail_from_address' => getenv('MAIL_FROM_ADDRESS'),
-    'mail_domain' => getenv('MAIL_DOMAIN'),
-
-    'default_language' => getenv('NEXTCLOUD_LANGUAGE'),
-    'force_language' => getenv('NEXTCLOUD_LANGUAGE'),
-    'default_locale' => getenv('NEXTCLOUD_LOCALE'),
-    'force_locale' => getenv('NEXTCLOUD_LOCALE'),
-
-    'objectstore' => [
-        'class' => '\\OC\\Files\\ObjectStore\\S3',
-        'arguments' => [
-            'bucket' => getenv('BUCKET_NAME'),
-            'autocreate' => true,
-            'key'    => getenv('BUCKET_KEY'),
-            'secret' => getenv('BUCKET_SECRET'),
-            'hostname' => getenv('BUCKET_HOSTNAME'),
-            'port' => getenv('BUCKET_PORT'),
-            'use_ssl' => 433 == getenv('BUCKET_PORT'),
-            'region' => getenv('BUCKET_REGION'),
-        ],
-    ],
-
-    'memcache.distributed' => '\OC\Memcache\Redis',
-    'memcache.locking' => '\OC\Memcache\Redis',
-    'redis' => [
-        'host' => getenv('REDIS_HOST'),
-        'password' => getenv('REDIS_HOST_PASSWORD'),
-        'port' => getenv('REDIS_HOST_PORT'),
-    ],
-];
+$CONFIG = array (
+  'config_is_read_only' => true,
+  'instanceid' => 'instanceId',
+  'passwordsalt' => 'd/2xJQQgCOgMXw9qxddfVHTIQJrN28',
+  'secret' => 'gY6KNngHKQQNETzC0TYcZl8lxGinIQy0NUlrFbOaxgWlui9h',
+  'trusted_domains' => 
+  array (
+    0 => 'localhost',
+  ),
+  'datadirectory' => '/var/www/html/data',
+  'version' => '17.0.2.1',
+  'dbtype' => 'mysql',
+  'dbhost' => 'mysql',
+  'dbname' => 'nextcloud',
+  'dbuser' => 'nextcloud',
+  'dbpassword' => 'nextcloud',
+  'dbtableprefix' => 'oc_',
+  'mysql.utf8mb4' => true,
+  'installed' => true,
+  'overwrite.cli.url' => 'https://localhost/nextcloud',
+  'memcache.local' => '\\OC\\Memcache\\APCu',
+  'apps_paths' => 
+  array (
+    0 => 
+    array (
+      'path' => '/var/www/html/apps',
+      'url' => '/apps',
+      'writable' => false,
+    ),
+    1 => 
+    array (
+      'path' => '/var/www/html/custom_apps',
+      'url' => '/custom_apps',
+      'writable' => true,
+    ),
+  ),
+  'mail_smtpmode' => 'smtp',
+  'mail_smtphost' => 'mail.gandi.net',
+  'mail_smtpport' => '587',
+  'mail_smtpsecure' => 'tls',
+  'mail_smtpauth' => true,
+  'mail_smtpauthtype' => 'LOGIN',
+  'mail_smtpname' => 'contact@jeremy-reynaud.fr',
+  'mail_smtppassword' => '\'G8jm!*2rG3Asfq&iYk^@\'',
+  'mail_from_address' => false,
+  'mail_domain' => false,
+  'default_language' => 'fr',
+  'force_language' => 'fr',
+  'default_locale' => 'fr_FR',
+  'force_locale' => 'fr_FR',
+  'objectstore' => 
+  array (
+    'class' => '\\OC\\Files\\ObjectStore\\S3',
+    'arguments' => 
+    array (
+      'bucket' => 'dev.local',
+      'autocreate' => true,
+      'key' => 'SCW24B4M603RGKSHWHQE',
+      'secret' => '4ffcfc51-31b9-4455-b22b-8fdcbcb0584e',
+      'hostname' => 'https://s3.fr-par.scw.cloud',
+      'port' => '433',
+      'use_ssl' => true,
+      'region' => 'fr-par',
+    ),
+  ),
+  'memcache.distributed' => '\\OC\\Memcache\\Redis',
+  'memcache.locking' => '\\OC\\Memcache\\Redis',
+  'redis' => 
+  array (
+    'host' => false,
+    'password' => false,
+    'port' => false,
+  ),
+  'dbport' => '',
+);
