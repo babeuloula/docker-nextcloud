@@ -13,12 +13,12 @@ services:
             - ${NEXTCLOUD_PORT}:80
 
     nextcloud:
-#        build:
-#            context: .
-#            dockerfile: nextcloud/Dockerfile
-#            args:
-#                NEXTCLOUD_VERSION: "${NEXTCLOUD_VERSION}"
-        image: nextcloud:${NEXTCLOUD_VERSION}-fpm-alpine
+        build:
+            context: .
+            dockerfile: nextcloud/Dockerfile
+            args:
+                NEXTCLOUD_VERSION: "${NEXTCLOUD_VERSION}"
+#        image: nextcloud:${NEXTCLOUD_VERSION}-fpm-alpine
         restart: unless-stopped
         depends_on:
           - mysql

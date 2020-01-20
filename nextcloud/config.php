@@ -2,8 +2,8 @@
 $CONFIG = array (
   'config_is_read_only' => true,
   'instanceid' => 'instanceId',
-  'passwordsalt' => 'd/2xJQQgCOgMXw9qxddfVHTIQJrN28',
-  'secret' => 'gY6KNngHKQQNETzC0TYcZl8lxGinIQy0NUlrFbOaxgWlui9h',
+  'passwordsalt' => 'OHpwve+r2xGJwq3Ei+2y5bkDuRl1g2',
+  'secret' => '3XO2teI7h+ViSWgZLRuBcrKy7neZTziIOcryb4J3PBO5d4QU',
   'trusted_domains' => 
   array (
     0 => 'localhost',
