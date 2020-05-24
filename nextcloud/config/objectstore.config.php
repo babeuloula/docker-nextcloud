@@ -12,8 +12,7 @@ $CONFIG = [
             'port' => (int) getenv('BUCKET_PORT'),
             'use_ssl' => 433 === (int) getenv('BUCKET_PORT'),
             'region' => getenv('BUCKET_REGION'),
-
-            'use_path_style_endpoint' => true,
+            'use_path_style' => true,
         ],
     ],
 ];
