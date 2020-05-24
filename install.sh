@@ -2,6 +2,11 @@
 
 set -e
 
+apt update && apt upgrade -y && apt autoremove -y
+apt install -y \
+    git \
+    nano
+
 apt-get install -y \
     apt-transport-https \
     ca-certificates \
@@ -27,4 +32,7 @@ curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compo
 chmod +x /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
+git clonehttps://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion.git nginx-proxy
+cd nginx-proxy
+cp .env.sample .env
 ./start.sh
